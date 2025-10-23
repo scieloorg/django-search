@@ -1,4 +1,4 @@
-# Django Search (Elasticsearch + Solr)
+# SciELO Search (Elasticsearch + Solr)
 
 Busca em Django 5.1 (Python 3.12) com suporte a **Elasticsearch** e **Solr** via uma camada simples.
 Selecione o backend por variável de ambiente `SEARCH_ENGINE` (`elasticsearch` ou `solr`).
