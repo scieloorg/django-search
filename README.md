@@ -37,3 +37,35 @@ Agora `/search/` usa Solr automaticamente.
 - Para Elasticsearch, o índice é criado automaticamente com mapeamento simples.
 - Código de backend em `search/search_backend.py`.
 - Comando de inicialização/população: `python manage.py init_search` (executado automaticamente no entrypoint do serviço).
+
+## Requisitos Funcionais
+
+- **Interface gráfica de pesquisa** amigável e responsiva  
+- **Pesquisa integrada e contextualizada** (suporte a *clusters*)  
+- **Suporte a estratégias de busca** com operadores booleanos  
+  - Exemplo: `dengue OR malaria`, `dengue AND malaria`  
+- **Consulta flexível**, sem a complexidade de uma pesquisa avançada, mas com liberdade para uso de estratégias personalizadas  
+- **Exportação de clusters (conjuntos)** em CSV e **geração de gráficos** dinâmicos  
+- **Ordenação** de resultados  
+- **Paginação** configurável  
+- **Alteração da quantidade de itens por página**  
+- **Internacionalização (i18n)** — suporte a múltiplos idiomas  
+- **Clusters colapsáveis** (expandir/recolher)  
+- **Tipos de cluster configuráveis:** *listbox*, *checkbox* e *multi-select*  
+- **Filtro por intervalo de datas**  
+- **Ações em massa:** selecionar itens para **Imprimir**, **Enviar por e-mail**, **Exportar** ou **Compartilhar**  
+- **Destaque do termo buscado** nos resultados de pesquisa  
+
+
+## Requisitos Não Funcionais
+
+- **Compatibilidade com Django** — deve ser possível integrar a solução como um app Django  
+- **Compatibilidade com mecanismos de busca**: Solr, Elasticsearch e OpenSearch  
+- **Instalação via `INSTALLED_APPS`** no Django  
+- **Geração de logs de pesquisa**  
+- **Suporte a busca por proximidade (proximity search)**  
+- **Clusters dinâmicos** — capacidade de **adicionar e remover** clusters em tempo de execução  
+- **Configuração dinâmica de parâmetros de pesquisa padrão**  
+- **Capacidade de exclusão dinâmica de conteúdos**  
+- **Ordenação dinâmica dos clusters**  
+
