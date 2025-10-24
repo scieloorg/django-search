@@ -1,4 +1,4 @@
-# SciELO Search
+# SciELO Search (Elasticsearch + Solr)
 
 Busca em Django 5.1 (Python 3.12) com suporte a **Elasticsearch** e **Solr** via uma camada simples.
 Selecione o backend por variável de ambiente `SEARCH_ENGINE` (`elasticsearch` ou `solr`).
@@ -69,3 +69,32 @@ Agora `/search/` usa Solr automaticamente.
 - **Capacidade de exclusão dinâmica de conteúdos**  
 - **Ordenação dinâmica dos clusters**  
 
+## Fluxo de trabalho
+
+- **Criar EPIC a partir da branch develop**
+  git checkout develop
+  git pull origin develop
+  git checkout -b EPICNAME
+
+- **Criar as features**
+  git checkout EPICNAME
+  git checkout -b TASKNAME
+
+- **Após o desenvolvimento**
+  git add .
+  git commit -m "feat: implementação inicial da UI de clusters"
+  git push -u origin EPICNAME
+
+- **Revisão do EPIC**
+
+- **Merge para EPIC em develop**
+  git checkout develop
+  git pull origin develop
+  git merge --no-ff epic/<nome-epic> -m "merge: incorporação do EPIC <nome-epic>"
+  git push origin develop
+
+- **Após aprovado em develop merge para a Main**
+  git checkout main
+  git pull origin main
+  git merge --no-ff develop -m "release: integração do EPIC <nome-epic>"
+  git push origin main
